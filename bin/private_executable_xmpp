@@ -1,0 +1,3 @@
+#!/bin/sh
+echo -e "\033]0;Chat\07";
+tmux -L ChatSession -f ~/.config/tmux/clean.conf new -s XMPP profanity || tmux -L ChatSession attach -t XMPP

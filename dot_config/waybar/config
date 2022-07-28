@@ -1,0 +1,94 @@
+/////////////////////////////////////////////////
+//                  WAYBAR
+/////////////////////////////////////////////////
+{
+    "position": "top", 
+    "modules-left": ["custom/archlogo", "sway/workspaces", "custom/separator", "sway/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["custom/mpd", "pulseaudio", "network", "battery", "custom/power"],
+
+    // Modules configuration
+	"sway/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": false,
+        "current-only": true,
+		"format": "{icon}",
+	 	"persistent_workspaces": {
+	 		"1": [],
+	},
+         	"format-icons": {
+         }
+	},
+
+    "custom/archlogo": {
+        "format": " ",
+        "tooltip": false,
+    },
+
+    "custom/separator": {
+        "format": "| ",
+        "tooltip": false,
+    },
+
+    "sway/window": {
+        "max-length": 25,
+    },
+
+    "custom/mpd": {
+        "format": " ",
+        "interval": 1, 
+        "exec": "mpc current", 
+        "exec-if": "pgrep mpd",
+        "on-click": "mpc toggle",
+        "on-click-right": "sonata",
+        "tooltip": false,
+    },
+
+	"custom/power": {
+		"format": "襤",
+		"on-click": "/home/jonathan/.config/waybar/waybar-power.sh",
+        "tooltip": false,
+	},
+	"clock": {
+		"format": "{:%a %d %B ,  %H:%M}",
+        	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+	},
+	"battery": {
+        	"states": {
+            		"critical": 15
+        	},
+        	"format": "{icon}",
+        	"format-charging": "",
+        	"format-plugged": "",
+        	"format-alt": "{icon}",
+        	"format-full": "",
+        	"format-icons": ["", "", "", "", "", "", "", "", "", "", ""],
+            "tooltip-format": "Batterie: {capacity}%\nTemps restant: {time}"
+	},
+	"network": {
+            "interval": 1,
+        	"format-wifi": "直",
+        	"format-ethernet": " ",
+        	"format-linked": " ",
+        	"format-disconnected": "睊",
+            "tooltip-format-ethernet": "{ipaddr}/{cidr}\nUp: {bandwidthUpOctets}\nDown: {bandwidthDownOctets}",
+            "tooltip-format-wifi": "{essid}\n{ipaddr}/{cidr}\nSignal: {signalStrength}%\nUp: {bandwidthUpOctets}\nDown: {bandwidthDownOctets}",
+            "tooltip-format-disconnect": "Non connecté"
+	},
+	"pulseaudio": {
+		"format": "{icon}",
+        "format-bluetooth": "{icon}   ",
+        "format-muted": "婢",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["奄", "奔", "墳"],
+        },
+        "on-click": "pavucontrol",
+        "tooltip-format": "Volume: {volume}%"
+    }
+}

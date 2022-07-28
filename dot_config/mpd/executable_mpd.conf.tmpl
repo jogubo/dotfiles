@@ -1,0 +1,30 @@
+#################################################
+#                     MPD
+#################################################
+
+# Fichier BDD
+db_file            "{{ .chezmoi.homeDir }}/.config/mpd/database"
+
+# Journalisation
+log_file           "syslog"
+
+# Dossier musique
+music_directory    "{{ .chezmoi.homeDir }}/music"
+
+# Pulse audio
+audio_output {
+        type            "pulse"
+        name            "pulse audio"
+}
+
+# NCMPCPP Visualisation
+audio_output {
+    type                "fifo"
+    name                "my_fifo"
+    path                "/tmp/mpd.fifo"
+    format              "44100:16:2"
+}
+
+# Mise à jour auto de la BDD
+auto_update "yes"
+

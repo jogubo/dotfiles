@@ -1,0 +1,35 @@
+# Configuration pour les fichiers générés par les templates chezmoi
+# Le fichier est à placer dans ~/.config/chezmoi/chezmoi.yml
+
+data:
+  # Choix du clavier et de la variante
+  # Qwerty: us, intl | Azerty: fr, oss
+  keyboard:
+    layout: fr 
+    variant: oss
+
+  # Éditeur de texte
+  editor: nvim
+
+  # Mutt
+  mutt:
+    server: server.tld
+    user: username
+    passwd: "`pass email/user@domain.tld`"
+
+  # Polices
+  terminal:
+    font: FiraCode Nerd Font
+    font_size: 11
+    
+  sway:
+    font: Fira Sans
+    font_size: 12
+
+  waybar:
+    font: "'Fira Sans', 'FiraCode Nerd Font'"
+    font_size: 18
+
+  gtk:
+    font: Fira Sans
+    font_size: 11

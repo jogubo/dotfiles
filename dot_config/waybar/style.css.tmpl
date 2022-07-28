@@ -1,0 +1,52 @@
+* {
+    border-radius: 0px;
+    font-family: {{ .waybar.font }};
+    font-size: {{ .waybar.font_size }}px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: #2e3440;
+    color: #eceff4;
+    border-bottom: 2px solid #4c566a;
+}
+
+#custom-archlogo {
+	padding: 0 0 0 20px;
+}
+
+#clock {
+    padding: 0 15px;
+}
+
+#custom-mpd, #pulseaudio, #network, #battery, #custom-power {
+    padding: 0 15px;
+}
+
+#custom-separator {
+    color: #4c566a;
+    padding: 0 15px 0 0;
+}
+
+#workspaces button:hover {
+    color: #eceff4;
+    background-color: transparent;
+}
+
+#battery.critical:not(.charging) {
+    color: #bf616a;
+    background-color: transparent;
+}
+
+#custom-power {
+    margin-right: 15px;
+}
+
+tooltip {
+    background: #2e3440;
+    border: 2px solid #4c566a;
+}
+
+tooltip label {
+    color: #eceff4;
+}
