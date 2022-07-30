@@ -36,3 +36,10 @@ chezmoi update
 <img src="./screenshots/neovim.png">
 
 <img src="./screenshots/split.png">
+
+
+#### Wallpaper
+
+*Source:* Tears in The Rain - Daniel Lang
+
+Utilisation de ImageGoNord pour modifier la palette de couleurs.
